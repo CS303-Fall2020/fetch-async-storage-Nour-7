@@ -11,6 +11,8 @@ import TodoItem from "../components/todoItem";
 import AddTodo from "../components/addTodo";
 import Loader from '../components/loader';
 import ConLabel from '../components/conLabel';
+import { SplashScreen } from 'expo';
+
 
 
 export default function Home({ navigation , route}) {
