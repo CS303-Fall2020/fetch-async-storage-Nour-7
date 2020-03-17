@@ -33,13 +33,15 @@ export default function Home({ navigation , route}) {
       })
     }
     if(isMout)
-   { if(route.params.isFocus){
+   { 
+    if(route.params.isFocus){
       setTodos(prevTodos => {
         updateStorage(prevTodos)
         return [...prevTodos];
        });
        navigation.setParams({isFocus :false});
-    }}
+    }
+  }
 
   });
 const loadScreen = () =>{
@@ -100,9 +102,15 @@ const fetchData = async()=>{
     console.log("Offline")
     console.log(e)
   }
+  
   setLoading(()=>{
     return false
   })
+  
+  if(!isMout){
+    SplashScreen.hide()
+  }
+  
 }
 
   const pressHandler = id => {

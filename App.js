@@ -8,8 +8,12 @@ import {
   Keyboard
 } from "react-native";
 import Navigator from "./routes/homeStack";
+import { SplashScreen } from 'expo';
+
 
 export default function App() {
+  SplashScreen.preventAutoHide()
+
   console.disableYellowBox = true;
   return (
     <TouchableWithoutFeedback
