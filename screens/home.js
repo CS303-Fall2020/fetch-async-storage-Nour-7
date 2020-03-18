@@ -154,7 +154,19 @@ const fetchData = async()=>{
   };
 
   if(loading)
-    return( <Loader/>)
+    return( 
+     <View style ={{flex:1}}>      
+     <View style={styles.content}>
+      <View style={styles.list}>
+      <Loader/>
+      </View>
+      <Button onPress={fetchData} title="Refresh"/>
+
+    </View>
+    </View>
+
+      
+      )
   return (
     <View style ={{flex:1}}>      
     <ConLabel connected = {online} fetchData={fetchData}/>
@@ -173,8 +185,9 @@ const fetchData = async()=>{
             />
           )}
         />
-              <Button onPress={fetchData} title="Refresh"/>
       </View>
+      <Button onPress={fetchData} title="Refresh"/>
+
     </View>
     </View>
    
@@ -192,6 +205,8 @@ const styles = StyleSheet.create({
   },
   list: {
     marginTop: 20,
-    flex: 1
+    flex: 1,
+    marginBottom: 20,
+
   }
 });
